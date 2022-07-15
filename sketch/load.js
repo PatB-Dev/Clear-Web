@@ -1,6 +1,6 @@
 
 document.addEventListener('click', function (e) {
-  clear(e);
+  window.onload = clear(e);
 });
 
 function clear(e) {
@@ -17,5 +17,8 @@ function clear(e) {
     className[0].style.setProperty("display", "none", "important");
   }
 }
-
-//window.alert(document.cookie.split(';').join(';\r\n'));
+/*
+window.onload = function () {
+  alert(document.cookie.split(';').join(';\r\n'));
+}
+*/
