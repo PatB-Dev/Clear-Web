@@ -12,7 +12,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "sketch/clear.js"
+                "sketch/load.js"
             ]
         }
     ],
