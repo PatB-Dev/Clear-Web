@@ -1,18 +1,19 @@
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   clear(e);
 });
 
-function clear(e){
+function clear(e) {
+  //déverrouille de scroll
   document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
-  if(e.target.id){
-    //console.log("ID : " + e.target.id);
+  if (e.target.id) {
+    //clear sur la class au clique
     var id = document.getElementById(e.target.id);
     id.style.setProperty("display", "none", "important");
   }
-  else{
-    console.log("Class : " + e.target.className);
+  else {
     var className = document.getElementsByClassName(e.target.className);
-    //className.style.setProperty("display", "none", "important");
+    //clear sur la class au clique
+    className[0].style.setProperty("display", "none", "important");
   }
 }
