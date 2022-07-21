@@ -17,6 +17,7 @@ function clear(e) {
     className[0].style.setProperty("display", "none", "important");
   }
 }
+
 /*
 window.onload = function () {
   alert(document.cookie.split(';').join(';\r\n'));
