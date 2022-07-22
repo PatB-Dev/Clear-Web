@@ -3,19 +3,22 @@
     "name": "Clear web",
     "version": "1.0",
     "description": "Clear web",
-    "icons": {
-        "128": "icons/kwan.png"
-    },
     "content_scripts": [
         {
             "matches": [
                 "<all_urls>"
             ],
             "js": [
-                "sketch/load.js"
+                "sketch/front.js"
             ]
         }
     ],
+    "background": {
+        "scripts": [
+            "sketch/back.js"
+        ],
+        "persistent": true
+    },
     "browser_action": {
         "default_icon": "icons/kwan.png",
         "default_popup": "sketch/popup.html",
@@ -26,15 +29,7 @@
         "sketch/popup.html"
     ],
     "permissions": [
-        "alarms",
-        "contextMenus",
-        "storage",
-        "unlimitedStorage",
-        "tabs",
         "activeTab",
-        "notifications",
-        "webRequest",
-        "webRequestBlocking",
-        "<all_urls>"
+        "storage"
     ]
 }
