@@ -4,7 +4,6 @@ let toogle = null;
 //sauvegarde de l'état du front
 function handleMessage(request, sender, sendResponse) {
   browser.storage.local.set({ toogleValue: request.greeting });
-  storageValue();
 }
 
 browser.runtime.onMessage.addListener(handleMessage);
