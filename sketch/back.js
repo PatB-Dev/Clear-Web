@@ -1,12 +1,10 @@
 
-
 let toogle = null;
 
-console.log("chargement Back");
+//sauvegarde de l'état du front
 function handleMessage(request, sender, sendResponse) {
   browser.storage.local.set({ toogleValue: request.greeting });
   storageValue();
-  sendResponse({ response: toogle });
 }
 
 browser.runtime.onMessage.addListener(handleMessage);
@@ -14,6 +12,7 @@ browser.runtime.onMessage.addListener(handleMessage);
 async function storageValue() {
   toogle = await browser.storage.local.get('toogleValue');
   console.log(toogle.toogleValue);
+
 }
 
 /*
