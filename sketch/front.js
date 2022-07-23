@@ -9,12 +9,15 @@ function notifyBackgroundPage(e) {
     sending.then(handleResponse, handleError);
 }
 
+
 //reception du message du background script
 function handleResponse(message) {
     console.log("Reception Front : ");
     // retour back : "message.response"
 }
 
+
+//affichage erreurs messages entre front et back
 function handleError(error) {
     console.log(`Error: ${error}`);
 }
