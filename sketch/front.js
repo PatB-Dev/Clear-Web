@@ -14,3 +14,4 @@ function handleResponse(message) {
     console.log("Reception Front : ");
     // retour back : "message.response"
 }
+//TO DO add event listener on close popup
