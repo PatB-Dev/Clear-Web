@@ -2,18 +2,18 @@
 let toogle = null;
 
 //sauvegarde de l'état du front
-function handleMessage(request, sender, sendResponse) {
+function frontMessage(request, sender, sendResponse) {
   browser.storage.local.set({ toogleValue: request.greeting });
+  storageValue();
+  sendResponse({ response: toogle.toogleValue });
 }
-
-browser.runtime.onMessage.addListener(handleMessage);
+browser.runtime.onMessage.addListener(frontMessage);
 
 async function storageValue() {
   toogle = await browser.storage.local.get('toogleValue');
-  console.log(toogle.toogleValue);
-
 }
 
+storageValue();
 /*
 document.addEventListener('click', function (e) {
   window.onload = clear(e);
