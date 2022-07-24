@@ -12,8 +12,6 @@ browser.runtime.onMessage.addListener(frontMessage);
 async function storageValue() {
   toogle = await browser.storage.local.get('toogleValue');
 }
-
-storageValue();
 /*
 document.addEventListener('click', function (e) {
   window.onload = clear(e);
