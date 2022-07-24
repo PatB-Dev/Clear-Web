@@ -12,6 +12,6 @@ toogle.addEventListener("click", sendBack);
 
 //reception du message du background script
 function handleResponse(message) {
-    //console.log("Reception Front : " + message.response);
+    console.log("Reception Front : " + message.response);
 }
 //TO DO add event listener on close popup
