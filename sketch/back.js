@@ -27,9 +27,3 @@ function clear(e) {
   }
 }
 */
-
-/*
-window.onload = function () {
-  alert(document.cookie.split(';').join(';\r\n'));
-}
-*/
