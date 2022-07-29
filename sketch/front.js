@@ -3,7 +3,7 @@ let toogle = document.getElementById("checkbox");
 //reception du message du background script au chargement de la page
 window.onload = load();
 function load() {
-  //récupération de l'état du front
+  //récupération de l'état du back localStorage
   var getting = browser.storage.local.get('toogleValue');
   getting.then(function (result) {
     toogle.checked = result.toogleValue;
