@@ -1,3 +1,5 @@
+console.log("back.js loaded");
+
 let toogle = null;
 
 //sauvegarde de l'état du front
@@ -8,10 +10,6 @@ function frontMessage(request, sender, sendResponse) {
 browser.runtime.onMessage.addListener(frontMessage);
 
 /*
-document.addEventListener('click', function (e) {
-  window.onload = clear(e);
-});
-
 function clear(e) {
   //déverrouille de scroll
   document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");

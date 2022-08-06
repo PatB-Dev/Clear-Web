@@ -1,4 +1,13 @@
-let toogle = document.getElementById("checkbox");
+console.log("front.js loaded");
+
+//scroll unblock
+document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
+
+const toogle = document.getElementById("checkbox");
+
+document.addEventListener('click', function (e) {
+  console.log(e);
+});
 
 //reception du message du background script au chargement de la page
 window.onload = load();
