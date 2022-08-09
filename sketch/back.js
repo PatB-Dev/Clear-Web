@@ -11,8 +11,6 @@ browser.runtime.onMessage.addListener(frontMessage);
 
 /*
 function clear(e) {
-  //déverrouille de scroll
-  document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
   if (e.target.id) {
     //clear sur la class au clique
     var id = document.getElementById(e.target.id);

@@ -5,10 +5,6 @@ document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "
 
 const toogle = document.getElementById("checkbox");
 
-document.addEventListener('click', function (e) {
-  console.log(e);
-});
-
 //reception du message du background script au chargement de la page
 window.onload = load();
 function load() {
@@ -26,3 +22,17 @@ function sendBack() {
   });
 }
 toogle.addEventListener("click", sendBack);
+
+
+function clear(e) {
+  if (e.target.id) {
+    //clear sur la class au clique
+    var id = document.getElementById(e.target.id);
+    id.style.setProperty("display", "none", "important");
+  }
+  else {
+    var className = document.getElementsByClassName(e.target.className);
+    //clear sur la class au clique
+    className[0].style.setProperty("display", "none", "important");
+  }
+}
