@@ -24,6 +24,9 @@ function sendBack() {
 toogle.addEventListener("click", sendBack);
 
 
+
+//au clique avoir la class de l'élément cliqué
+document.addEventListener("click", clear);
 function clear(e) {
   if (e.target.id) {
     //clear sur la class au clique

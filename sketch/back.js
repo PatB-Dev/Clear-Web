@@ -1,7 +1,5 @@
 console.log("back.js loaded");
 
-let toogle = null;
-
 //sauvegarde de l'état du front
 function frontMessage(request, sender, sendResponse) {
   browser.storage.local.set({ toogleValue: request.greeting });
