@@ -1,7 +1,8 @@
 
-window.document.addEventListener("click", clear);
 //scroll unblock
 document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
+
+window.document.addEventListener("click", clear);
 
 const toogle = document.getElementById("checkbox");
 
