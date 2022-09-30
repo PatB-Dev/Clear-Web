@@ -1,4 +1,3 @@
-console.log("back.js loaded");
 
 //sauvegarde de l'état du front
 function frontMessage(request, sender, sendResponse) {
