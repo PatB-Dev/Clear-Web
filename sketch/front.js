@@ -20,17 +20,18 @@ async function sendBack() {
   });
 }
 
-function clear(e) {
-  console.log(e)
-}
-
 function verif(e) {
   if (e.target.checked) {
     return clear(e)
   }
 }
 
+function clear(e) {
+  console.log(e)
+}
+
 document.addEventListener('click', verif)
+
 /*
 function clear(e) {
   if (e.target.id) {
