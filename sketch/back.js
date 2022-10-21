@@ -5,3 +5,4 @@ function frontMessage(request, sender, sendResponse) {
   sendResponse({ response: toogle.toogleValue });
 }
 browser.runtime.onMessage.addListener(frontMessage);
+

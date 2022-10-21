@@ -1,36 +1,25 @@
 
 //scroll unblock
-document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
+document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important")
 
-//reception du message du background script au chargement de la page
-document.onload = load();
+const toogle = document.querySelector('input')
+toogle.addEventListener('click', sendBack)
 
-const toogle = document.querySelector('input');
-toogle.addEventListener('click', sendBack);
-
-async function load() {
-  //récupération de l'état du back localStorage
-  var getting = browser.storage.local.get('toogleValue');
-  getting.then(function (result) {
-    toogle.checked = result.toogleValue;
-  });
-}
-
-async function sendBack(e) {
-  console.log(e)
+async function sendBack() {
   //envoie un message au background script
-  var sending = browser.runtime.sendMessage({
+  let sending = browser.runtime.sendMessage({
     greeting: toogle.checked
   });
 }
 
+function clear(e) {
+  console.log(e.target.checked, e.target)
+}
 
+document.addEventListener('click', clear)
 
-
-//document.addEventListener("click", sendBack);
 /*
 function clear(e) {
-  console.log(toogle);
   if (e.target.id) {
     //clear sur la class au clique
     var id = document.getElementById(e.target.id);
@@ -43,3 +32,16 @@ function clear(e) {
   }
 }
 */
+
+/*
+function load() {
+  //récupération de l'état du back localStorage
+  let getting = browser.storage.local.get('toogleValue')
+  getting.then(function (result) {
+    toogle.checked = result.toogleValue
+  });
+}
+*/
+
+//reception du message du background script au chargement de la page
+//document.onload = load()
