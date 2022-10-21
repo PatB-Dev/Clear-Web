@@ -2,13 +2,13 @@
 //scroll unblock
 document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
 
-window.document.addEventListener("click", clear);
-
-const toogle = document.getElementById("checkbox");
-
 //reception du message du background script au chargement de la page
-window.onload = load();
-function load() {
+document.onload = load();
+
+const toogle = document.querySelector('input');
+toogle.addEventListener('click', sendBack);
+
+async function load() {
   //récupération de l'état du back localStorage
   var getting = browser.storage.local.get('toogleValue');
   getting.then(function (result) {
@@ -16,14 +16,19 @@ function load() {
   });
 }
 
-function sendBack() {
+async function sendBack(e) {
+  console.log(e)
   //envoie un message au background script
   var sending = browser.runtime.sendMessage({
     greeting: toogle.checked
   });
 }
-toogle.addEventListener("click", sendBack);
 
+
+
+
+//document.addEventListener("click", sendBack);
+/*
 function clear(e) {
   console.log(toogle);
   if (e.target.id) {
@@ -37,3 +42,4 @@ function clear(e) {
     className[0].style.setProperty("display", "none", "important");
   }
 }
+*/
