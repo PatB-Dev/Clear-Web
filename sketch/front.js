@@ -1,9 +1,17 @@
-
 //scroll unblock
 document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important")
+document.onload = load()
 
 const toogle = document.querySelector('input')
 toogle.addEventListener('click', sendBack)
+
+function load() {
+  //récupération de l'état du back localStorage
+  let getting = browser.storage.local.get('toogleValue')
+  getting.then(function (result) {
+    toogle.checked = result.toogleValue
+  });
+}
 
 async function sendBack() {
   //envoie un message au background script
@@ -13,11 +21,16 @@ async function sendBack() {
 }
 
 function clear(e) {
-  console.log(e.target.checked, e.target)
+  console.log(e)
 }
 
-document.addEventListener('click', clear)
+function verif(e) {
+  if (e.target.checked) {
+    return clear(e)
+  }
+}
 
+document.addEventListener('click', verif)
 /*
 function clear(e) {
   if (e.target.id) {
