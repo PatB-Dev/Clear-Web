@@ -2,13 +2,18 @@
 //déblocage du scroll
 document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
 
-document.querySelector('input').addEventListener('change', (e) => {
-  localStorage.setItem('toogleValue', e.currentTarget.checked)
-  clear(e)
-})
+document.querySelector('input').addEventListener('change', save)
 
-function clear(e) {
-  console.log(e.target)
+function save(e) {
+  browser.runtime.sendMessage({ 'value': e.currentTarget.checked })
 }
 
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
+
+/*
+window.document.addEventListener('click', ouEstLeClick);
+function ouEstLeClick(e) {
+  //console.log(window.document.activeElement)
+  console.log(e.target)
+}
+*/

@@ -1,9 +1,5 @@
+browser.runtime.onMessage.addListener(value)
 
-//sauvegarde de l'état du front
-function frontMessage(request, sender, sendResponse) {
-  console.log('back')
-  browser.storage.local.set({ toogleValue: request.greeting });
-  sendResponse({ response: toogle.toogleValue });
-
+function value(bool) {
+    console.log(bool.value)
 }
-browser.runtime.onMessage.addListener(frontMessage);
