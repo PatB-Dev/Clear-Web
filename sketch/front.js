@@ -1,33 +1,14 @@
 
-//scroll unblock
+//déblocage du scroll
 document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
 
-//reception du message du background script au chargement de la page
-document.onload = load();
+const toogle = document.querySelector('input')
+toogle.addEventListener('click', value)
 
-const toogle = document.querySelector('input');
-toogle.addEventListener('click', sendBack);
-
-async function load() {
-  //récupération de l'état du back localStorage
-  var getting = browser.storage.local.get('toogleValue');
-  getting.then(function (result) {
-    toogle.checked = result.toogleValue;
-  });
+function value() {
+  localStorage.setItem('toogleValue', toogle.checked)
 }
 
-async function sendBack(e) {
-  console.log(e)
-  //envoie un message au background script
-  var sending = browser.runtime.sendMessage({
-    greeting: toogle.checked
-  });
-}
-
-
-
-
-//document.addEventListener("click", sendBack);
 /*
 function clear(e) {
   console.log(toogle);
