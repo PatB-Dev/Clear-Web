@@ -2,12 +2,9 @@
 //déblocage du scroll
 document.getElementsByTagName("body")[0].style.setProperty("overFlow", "auto", "important");
 
-const toogle = document.querySelector('input')
-toogle.addEventListener('click', value)
-
-function value() {
-  localStorage.setItem('toogleValue', toogle.checked)
-}
+document.querySelector('input').addEventListener('change', (e) => {
+  localStorage.setItem('toogleValue', e.currentTarget.checked)
+})
 
 /*
 function clear(e) {
