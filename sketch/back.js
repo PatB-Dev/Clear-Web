@@ -7,4 +7,8 @@ function frontMessage(request, sender, sendResponse) {
 
 }
 browser.runtime.onMessage.addListener(frontMessage);
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 8c8f29c14e97a0e429d281a6c367a40810635e9d
