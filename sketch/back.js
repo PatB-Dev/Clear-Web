@@ -7,11 +7,9 @@ function value(bool) {
     localStorage.setItem('toogle', bool.value)
 }
 
-document.addEventListener('click', sendFront)
-
-function sendFront() {
-    console.log('OK')
-    browser.runtime.sendMessage({ 'test': 'test' })
+document.addEventListener('click', test)
+function test() {
+    console.log('CLIQUE')
 }
 
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Content_scripts
