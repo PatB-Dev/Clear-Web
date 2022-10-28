@@ -8,11 +8,10 @@ function save(e) {
   browser.runtime.sendMessage({ 'value': e.currentTarget.checked })
 }
 
-browser.runtime.onMessage.addListener(
-  (data, sender) => {
-    console.log(data)
-  }
-);
+browser.runtime.onMessage.addListener(value)
+function value(a) {
+  console.log('A')
+}
 
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
 
