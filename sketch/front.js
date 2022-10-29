@@ -7,6 +7,12 @@ function save(e) {
   browser.runtime.sendMessage({ 'value': e.currentTarget.checked })
 }
 
+browser.runtime.sendMessage(
+  'Hello',
+  (response) => {
+    console.log(response)
+  })
+
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
 
 /*

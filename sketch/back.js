@@ -7,9 +7,8 @@ function value(bool) {
     localStorage.setItem('toogle', bool.value)
 }
 
-document.addEventListener('click', test)
-function test() {
-    console.log('CLIQUE')
-}
-
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    console.log(message)
+    sendResponse('Back')
+})
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Content_scripts
