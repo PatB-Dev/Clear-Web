@@ -8,7 +8,9 @@ function value(bool) {
 }
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log(message)
-    sendResponse('Back')
+    console.log(sender)
+    console.log(toogleV)
+    //sendResponse(true)
 })
+
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Content_scripts
