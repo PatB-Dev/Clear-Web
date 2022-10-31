@@ -12,12 +12,12 @@ function restore() {
   localStorage.getItem('value') === 'true' ? toogle.checked = true : false
 }
 
-//https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
 
-/*
 document.addEventListener('click', ouEstLeClick);
 function ouEstLeClick(e) {
   console.log(window.document.activeElement)
-  console.log(e.target)
+  //console.log(e.target)
 }
-*/
+
+
+//https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
