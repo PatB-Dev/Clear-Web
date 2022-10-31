@@ -12,12 +12,15 @@ function restore() {
   localStorage.getItem('value') === 'true' ? toogle.checked = true : false
 }
 
-
-document.addEventListener('click', ouEstLeClick);
-function ouEstLeClick(e) {
-  console.log(window.document.activeElement)
-  //console.log(e.target)
+document.addEventListener('click', clearOuPas);
+function clearOuPas(e) {
+  console.log(e)
+  let extension = document.getElementById('clear')
+  if (extension.id != 'clear') {
+    console.log(e)
+  } else {
+    console.log('NO Clean')
+  }
 }
-
 
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
