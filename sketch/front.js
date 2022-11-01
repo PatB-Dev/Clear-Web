@@ -14,13 +14,23 @@ function restore() {
 
 document.addEventListener('click', clearOuPas);
 function clearOuPas(e) {
-  console.log(e)
-  let extension = document.getElementById('clear')
-  if (extension.id != 'clear') {
-    console.log(e)
-  } else {
-    console.log('NO Clean')
+  let extension = document.body.id
+  if (toogle.checked && extension !== 'clear') {
+    console.log('OK')
   }
 }
-
+/*
+function clear(e) {
+  if (e.target.id) {
+    //clear sur la class au clique
+    var id = document.getElementById(e.target.id);
+    id.style.setProperty("display", "none", "important");
+  }
+  else {
+    var className = document.getElementsByClassName(e.target.className);
+    //clear sur la class au clique
+    className[0].style.setProperty("display", "none", "important");
+  }
+}
+*/
 //https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage
