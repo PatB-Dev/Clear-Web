@@ -6,19 +6,21 @@ function save(e) {
   localStorage.setItem('value', e.target.checked)
 }
 
+let toogle = document.getElementById('checkbox')
+localStorage.getItem('value') === 'true' ? toogle.checked = true : false
+
+/*
 window.addEventListener('load', restore)
 function restore() {
-  let toogle = document.getElementById('checkbox')
-  localStorage.getItem('value') === 'true' ? toogle.checked = true : false
+  //localStorage.getItem('value') === 'true' ? toogle.checked = true : false
 }
+*/
 
-document.addEventListener('click', clearOuPas);
-function clearOuPas(e) {
-  let extension = document.body.id
-  if (toogle.checked && extension !== 'clear') {
-    console.log('OK')
-  }
-}
+document.addEventListener('click', (e) => {
+  console.log(toogle.checked)
+  e.target.style.setProperty('display', 'none')
+})
+
 /*
 function clear(e) {
   if (e.target.id) {
