@@ -26,7 +26,9 @@
         "browser_style": true
     },
     "icons": {
-        "32": "icons/Pat.png"
+        "16": "icons/Pat.png",
+        "48": "icons/Pat.png",
+        "128": "icons/Pat.png"
     },
     "web_accessible_resources": [
         "sketch/popup.html"
