@@ -4,7 +4,6 @@ document.querySelector('html').removeAttribute('class')
 
 let toogleC = document.getElementById('checkbox')
 
-let valid = null
 document.querySelector('input').addEventListener('change', (e) => {
   localStorage.setItem('value', e.target.checked)
 })
@@ -14,7 +13,7 @@ localStorage.getItem('value') === 'true' ? toogleC.checked = true : false
 document.addEventListener('click', (e) => {
   const clearHtml = e.currentTarget.body.id
   if (clearHtml !== 'clear') {
-    e.target.style.setProperty('display', 'none')
+    e.target.style.setProperty('display', 'none', 'important')
   }
   //e.target.style.setProperty('display', 'none', 'important')
 })

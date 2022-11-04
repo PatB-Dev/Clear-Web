@@ -9,10 +9,17 @@
                 "<all_urls>"
             ],
             "js": [
-                "sketch/front.js"
+                "sketch/front.js",
+                "sketch/back.js"
             ]
         }
     ],
+    "background": {
+        "scripts": [
+            "sketch/back.js"
+        ],
+        "persistent": true
+    },
     "browser_action": {
         "default_icon": "icons/Pat.png",
         "default_popup": "sketch/popup.html",
