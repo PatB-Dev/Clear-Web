@@ -3,7 +3,6 @@ document.getElementsByTagName('body')[0].style.setProperty("overFlow", "auto", "
 document.querySelector('html').removeAttribute('class')
 
 let toogleC = document.getElementById('checkbox')
-var valid
 
 document.querySelector('input').addEventListener('change', (e) => {
   localStorage.setItem('value', e.target.checked)
@@ -12,11 +11,10 @@ document.querySelector('input').addEventListener('change', (e) => {
 
 localStorage.getItem('value') === 'true' ? toogleC.checked = true : false
 
-/*
 document.addEventListener('click', (e) => {
   const clearHtml = e.currentTarget.body.id
+  console.log(localStorage.getItem('value'))
   if (clearHtml !== 'clear') {
     e.target.style.setProperty('display', 'none', 'important')
   }
 })
-*/
