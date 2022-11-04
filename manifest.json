@@ -20,7 +20,11 @@
         "persistent": true
     },
     "browser_action": {
-        "default_icon": "icons/Pat.png",
+        "default_icon": {
+            "16": "icons/Pat.png",
+            "48": "icons/Pat.png",
+            "128": "icons/Pat.png"
+        },
         "default_popup": "sketch/popup.html",
         "default_title": "Clear web",
         "browser_style": true
