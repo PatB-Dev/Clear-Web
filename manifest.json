@@ -2,21 +2,20 @@
     "manifest_version": 2,
     "name": "Clear web",
     "version": "0.1",
-    "description": "Clear web",
+    "description": "Clear web par Patb-Dev",
     "content_scripts": [
         {
             "matches": [
                 "<all_urls>"
             ],
             "js": [
-                "sketch/front.js",
-                "sketch/back.js"
+                "sketch/front.js"
             ]
         }
     ],
     "background": {
         "scripts": [
-            "sketch/back.js"
+            "sketch/front.js"
         ],
         "persistent": true
     },
@@ -25,6 +24,9 @@
         "default_popup": "sketch/popup.html",
         "default_title": "Clear web",
         "browser_style": true
+    },
+    "icons": {
+        "32": "icons/Pat.png"
     },
     "web_accessible_resources": [
         "sketch/popup.html"
