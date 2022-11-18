@@ -21,13 +21,19 @@ document.querySelector('input').addEventListener('change', (e) => {
   try {
     localStorage.setItem('value', e.target.checked)
   } catch (error) { }
+  const test = new Event('test')
+  document.dispatchEvent(test)
 })
 localStorage.getItem('value') === 'true' ? toogleC.checked = true : false
 
-//Suppression de l'élément sur le click (exclu la page de l'extension)
-document.addEventListener('click', (e) => {
+document.addEventListener('test', (e) => {
+  console.log(e)
+})
+
+//Suppression de l'élément sur le click (exclusion la page de l'extension)
+function clear(e) {
   const htmlBody = e.currentTarget.body.id
   if (htmlBody.length === 0 || htmlBody === null || htmlBody === undefined) {
     e.target.style.setProperty('display', 'none', 'important')
   }
-})
+}
