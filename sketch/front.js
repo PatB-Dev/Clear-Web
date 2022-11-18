@@ -16,19 +16,37 @@ const removeAttributes = (element) => {
 }
 removeAttributes(htmlAttributes)
 
+
 //Stockage de l'état du toogle dans l'extension et mise à jour
 document.querySelector('input').addEventListener('change', (e) => {
   try {
     localStorage.setItem('value', e.target.checked)
   } catch (error) { }
-  const test = new Event('test')
-  document.dispatchEvent(test)
+
+  if (toogleC.checked) {
+    console.log('ok')
+  } else {
+    console.log('Remove à faire du addlistener valid')
+  }
 })
 localStorage.getItem('value') === 'true' ? toogleC.checked = true : false
 
-document.addEventListener('test', (e) => {
-  console.log(e)
+
+/***************************************************************************/
+
+//Création d'un Event custom sur le click
+document.addEventListener('click', (e) => {
+  const valid = new CustomEvent('valid', { detail: e })
+  document.dispatchEvent(valid)
 })
+
+
+document.addEventListener('valid', (e) => {
+  console.log('yo le clear')
+  //clear(e)
+})
+
+
 
 //Suppression de l'élément sur le click (exclusion la page de l'extension)
 function clear(e) {
