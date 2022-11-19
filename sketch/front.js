@@ -4,6 +4,7 @@ document.getElementsByTagName('body')[0].style.setProperty("overFlow", "auto", "
 
 const htmlAttributes = document.querySelector('html')
 const toogleC = document.getElementById('checkbox')
+let value
 
 /**
  * supprime tous les attributes d'une balise
@@ -16,36 +17,27 @@ const removeAttributes = (element) => {
 }
 removeAttributes(htmlAttributes)
 
-
 //Stockage de l'état du toogle dans l'extension et mise à jour
-document.querySelector('input').addEventListener('change', (e) => {
+document.querySelector('input').addEventListener('change', e => {
+  value = e.target.checked
   try {
-    localStorage.setItem('value', e.target.checked)
+    localStorage.setItem('value', value)
   } catch (error) { }
-
-  if (toogleC.checked) {
-    console.log('ok')
-  } else {
-    console.log('Remove à faire du addlistener valid')
-  }
 })
 localStorage.getItem('value') === 'true' ? toogleC.checked = true : false
 
 
-/***************************************************************************/
+/********************************************************************************** */
 
 //Création d'un Event custom sur le click
-document.addEventListener('click', (e) => {
+document.addEventListener('click', e => {
   const valid = new CustomEvent('valid', { detail: e })
   document.dispatchEvent(valid)
 })
 
-
-document.addEventListener('valid', (e) => {
-  console.log('yo le clear')
-  //clear(e)
+document.addEventListener('valid', a => {
+  clear(a.detail)
 })
-
 
 
 //Suppression de l'élément sur le click (exclusion la page de l'extension)
