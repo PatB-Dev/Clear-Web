@@ -1,49 +1,35 @@
-//déblocage du scroll
+//déblocage du scroll au chargement de la page
 document.getElementsByTagName('html')[0].style.setProperty("overFlow", "auto", "important")
 document.getElementsByTagName('body')[0].style.setProperty("overFlow", "auto", "important")
 
-const htmlAttributes = document.querySelector('html')
-const toogleC = document.getElementById('checkbox')
-let value
-
-/**
- * supprime tous les attributes d'une balise
- * @param {*} element 
- */
-const removeAttributes = (element) => {
-  while (element.attributes.length > 0) {
-    element.removeAttribute(element.attributes[0].name);
-  }
+//quand on clique sur l'icone tous les addEventListener sont actifs
+startListener = () => {
+    document.addEventListener("mouseover", onHovered)
+    document.addEventListener("mouseout", onHovered)
+    document.addEventListener("click", onRemove)
 }
-removeAttributes(htmlAttributes)
 
-//Stockage de l'état du toogle dans l'extension et mise à jour
-document.querySelector('input').addEventListener('change', e => {
-  value = e.target.checked
-  try {
-    localStorage.setItem('value', value)
-  } catch (error) { }
-})
-localStorage.getItem('value') === 'true' ? toogleC.checked = true : false
+onHovered = (e) => {
+    const element = e.target
+    bgColor = (e.type == "mouseover") ? "rgba(220,20,60, .7)" : "transparent;"
 
-
-/********************************************************************************** */
-
-//Création d'un Event custom sur le click
-document.addEventListener('click', e => {
-  const valid = new CustomEvent('valid', { detail: e })
-  document.dispatchEvent(valid)
-})
-
-document.addEventListener('valid', a => {
-  clear(a.detail)
-})
-
-
-//Suppression de l'élément sur le click (exclusion la page de l'extension)
-function clear(e) {
-  const htmlBody = e.currentTarget.body.id
-  if (htmlBody.length === 0 || htmlBody === null || htmlBody === undefined) {
-    e.target.style.setProperty('display', 'none', 'important')
-  }
+    element.setAttribute("style", "background-color:" + bgColor)
 }
+
+onRemove = (e) => {
+    const parent = e.target.parentNode
+    e.preventDefault()
+    parent.removeChild(e.target)
+}
+
+// quand on éteint l'extension on supp tous les addEventListener
+finishListener = () => {
+    document.removeEventListener("mouseover", onHovered)
+    document.removeEventListener("mouseout", onHovered)
+    document.removeEventListener("click", onRemove)
+}
+
+//Com avec le back
+chrome.runtime.onMessage.addListener((flag, sender, sendResponse) => {
+    flag ? startListener() : finishListener()
+})

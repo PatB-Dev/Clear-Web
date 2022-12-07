@@ -15,32 +15,14 @@
     ],
     "background": {
         "scripts": [
-            "sketch/front.js"
+            "sketch/back.js"
         ],
-        "persistent": true
+        "persistent": false
     },
-    "browser_action": {
-        "default_icon": {
-            "16": "icons/Pat.png",
-            "48": "icons/Pat.png",
-            "128": "icons/Pat.png"
-        },
-        "default_popup": "sketch/popup.html",
-        "default_title": "Clear web",
-        "browser_style": true
-    },
+    "browser_action": {},
     "icons": {
-        "16": "icons/Pat.png",
-        "48": "icons/Pat.png",
-        "128": "icons/Pat.png"
-    },
-    "web_accessible_resources": [
-        "sketch/popup.html"
-    ],
-    "permissions": [
-        "activeTab",
-        "storage",
-        "tabs",
-        "<all_urls>"
-    ]
+        "16": "icons/PatOff.png",
+        "48": "icons/PatOff.png",
+        "128": "icons/PatOff.png"
+    }
 }
